@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="row">
+    <div class="col-20">
+<div class="col-xl-10 col-lg-10 col-md-10" >
+
+<div class="main-menu f-right d-none d-lg-block">
+    <!-- <li><a [routerLink]="['/cart']">Cart</a></li> -->
+    <button mat-raised-button color="warn" routerLink="/cart">Cart</button>
+</div>
+</div>
+
+<div class="container mt-5">
+  
+    <mat-form-field appearance="outline" class="w-50">
+        <mat-label>Search any product</mat-label>
+        <input matInput
+       
+                name="searchKey"
+                id="searchKey"
+                placeholder="Search any product">
+        <mat-hint>Search any product</mat-hint>
+    </mat-form-field>
+  
+
+    <mat-grid-list cols="4" rowHeight="2:3" gutterSize="15">
+        <mat-grid-tile *ngFor="let p of products">
+            <div class="row p-5">
+                <div class="image-container">
+                    <img class="home-page-product-image" [src]="p.toolsImages[0].url" alt="">
+
+                </div>
+                
+                    <div class="mt-3">
+                        <p><b>{{p.brand}} </b></p>
+                    </div>
+                    <div class="mt-2">
+                        <p style="white-space: inherit; height: 40PX; width: 288PX; overflow: hidden; text-overflow: ellipsis;">{{p.description}} </p>
+                    </div>
+                    <div class="mt-2">
+                        <b>Rs. {{p.promotion}}</b> &nbsp; <b style="text-decoration: line-through;"> {{p.priceperUnit}} </b>
+                    </div>
+                    <div class="mt-2">
+                        <button type="button" mat-raised-button color="warn" (click)="showProductDetails(p.idTools)">View Details</button>
+                    </div> 
+                
+                
+            </div>
+        </mat-grid-tile>
+        
+      </mat-grid-list>
+      
+</div>
+</div>
+</div>
+</div>
+<!-- <div class="container mt-2"> -->
+  <!-- <div class="container mt-2">
+    <div class="wrapper">
+      <header>
+        <h2>Price Range</h2>
+        <p>Use slider or enter min and max price</p>
+      </header>
+      <div class="price-input">
+        <div class="field">
+          <span>Min</span>
+          <input type="number" class="input-min" [(ngModel)]="products.minPrice" (input)="updateRange()" />
+        </div>
+        <div class="separator">-</div>
+        <div class="field">
+          <span>Max</span>
+          <input type="number" class="input-max" [(ngModel)]="maxPrice" (input)="updateRange()" />
+        </div>
+      </div>
+      <div class="slider">
+        <div class="progress" [style.width.%]="rangeWidth"></div>
+      </div>
+      <div class="range-input">
+        <input type="range" class="range-min" min="0" max="10000" [(ngModel)]="minPrice" (input)="updatePrice()" step="100" />
+        <input type="range" class="range-max" min="0" max="10000" [(ngModel)]="maxPrice" (input)="updatePrice()" step="100" />
+      </div>
+    </div>
+  </div> -->
+  
+    <!-- <div class="wrapper">
+        <header>
+          <h2>Price Range</h2>
+          <p>Use slider or enter min and max price</p>
+        </header>
+        <div class="price-input">
+          <div class="field">
+            <span>Min</span>
+            <input type="number" class="input-min" value="2500">
+          </div>
+          <div class="separator">-</div>
+          <div class="field">
+            <span>Max</span>
+            <input type="number" class="input-max" value="7500">
+          </div>
+        </div>
+        <div class="slider">
+          <div class="progress"></div>
+        </div>
+        <div class="range-input">
+          <input type="range" class="range-min" min="0" max="10000" value="2500" step="100">
+          <input type="range" class="range-max" min="0" max="10000" value="7500" step="100">
+        </div>
+      </div>
+</div> -->

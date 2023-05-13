@@ -1,0 +1,95 @@
+<div class="row m-3">
+    <div class="card col-md-4 text-center mr-3">
+      <div class="col">
+      
+        <div class="mb-3">
+          <h2> {{user.familyName}} {{user.nameUser}}</h2>
+          <small class="form-text text-muted">{{user.userType}}</small>
+        </div>
+        <div class="col mb-3 p-0">
+        
+            <button class="btn btn-danger"  >Delete My account</button>
+            
+            <button  class="btn-edit mat-icon-button" data-bs-toggle="modal" data-bs-target="#exampleModal" [routerLink]="['/home/edit', user.idUser]">
+              Update My account
+            </button>
+        </div>
+      </div>
+    </div>
+    <div class="card col-md-7">
+      <table class="table">
+        <tbody>
+        <tr>
+          <th scope="row"> Name</th>
+          <td>{{user.familyName}}  {{user.nameUser}}</td>
+        </tr>
+       
+        <tr>
+          <th scope="row">Date of birth</th>
+          <td>{{user.birthday | date}}</td>
+        </tr>
+       
+        
+         
+          <tr>
+          <th scope="row">Phone Number</th>
+          <td>{{user.phoneNumber}}</td>
+        </tr>
+        
+          <tr>
+            <th scope="row">Loyalty Points</th>
+            <td>{{user.loyaltyPoints}}</td>
+          </tr>
+          <tr>
+            <th scope="row">adress</th>
+            <td>{{user.adress}}</td>
+          </tr>
+         
+          
+        </tbody>
+      </table>
+    </div>
+  
+  </div>
+  <div class="favourite-place place-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-tittle text-center">
+            <span>FEATURED TOURS Packages</span>
+            <h2>ALL CAMPSITES</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let item of dataArray">
+          <div class="single-place mb-30">
+            <div class="place-img">
+              <img src="assets/Front Template/img/service/services6.jpg" alt="" class="img-thumbnail">
+            </div>
+            <div class="place-cap">
+              <div class="place-cap-top">
+                <span><i class="fas fa-star"></i><span>{{item.moyRate}}</span></span>
+                <h3><a href="#">{{item.name}}</a></h3>
+                <p class="dolor"><strong>Description:</strong> {{item.description}} </p> 
+              </div>
+              <div class="place-cap-bottom">
+                <ul>
+                  
+                  <li><i class="fas fa-map-marker-alt"></i>{{item.location}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+ 
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+

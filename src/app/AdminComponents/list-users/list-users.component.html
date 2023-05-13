@@ -1,0 +1,52 @@
+<div class="col-lg-12 grid-margin stretch-card" >
+  <div class="card">
+    <div class="card-body">
+      
+      <h4 class="card-title">List of Users  <span>&nbsp;&nbsp;</span>
+         <img src="/assets/Back Office/images/faces-clipart/pic-1.png" alt="image" />  <span>&nbsp;&nbsp;</span>
+           <img src="/assets/Back Office/images/faces-clipart/pic-2.png" alt="image" /></h4>
+      <table class="table table-striped">
+        <thead>
+          <tr> 
+            <th>id</th>
+            <th> Name</th>
+            <th>Date of birth</th>
+            <th>adress</th>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>Loyalty Points</th>
+            <th>User Type</th>
+            <th></th>
+            <th>Is Blocked</th>
+            
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of users ; let i = index">
+              <td>{{u.idUser}}</td>
+              <td>{{u.nameUser}} {{u.familyName}} </td>
+              <td>{{u.birthday | date }} </td>
+              <td>{{u.adress}}</td>
+              <td>{{u.email}}</td>
+              <td>{{u.phoneNumber}}</td>
+              <td>{{u.loyaltyPoints}}</td>
+              <td>{{u.userType}}</td>
+              <td>  
+                <button (click)="blockUser(u)" type="submit" class="btn btn-danger">Block</button>
+
+                    
+              </td>
+              <td> <div *ngIf="u.isBlocked" >
+                <p>yes</p>
+              </div></td>
+              
+              
+          </tr>  
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

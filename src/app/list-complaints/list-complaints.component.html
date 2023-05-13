@@ -1,0 +1,48 @@
+
+
+        
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                
+                <h4 class="card-title">Complaint list by sentiment score <span>&nbsp;&nbsp;</span>
+                   <img src="/assets/Back Office/images/faces-clipart/pic-1.png" alt="image" />  <span>&nbsp;&nbsp;</span>
+                     <img src="/assets/Back Office/images/faces-clipart/pic-2.png" alt="image" /></h4>
+                <table class="table table-striped">
+       
+          <thead>
+            <tr>
+              
+               <th>Type Complaint</th>
+               <th>Description</th>
+                <th>Score sentiment</th>
+               
+              
+    
+            </tr>
+          </thead>
+          <tbody>
+        
+            <tr *ngFor="let c of complaints">
+             
+                <td>{{c.complaintType}}   </td>
+                <td>{{c.description}}</td>
+                <td *ngIf="c.scoreSentiment > 0; then negative else positive" [ngClass]="{'text-danger': c.scoreSentiment < 0, 'text-success': c.scoreSentiment >= 0}">
+                    {{ c.scoreSentiment }}
+                  </td>
+                  
+                  <ng-template #negative>
+                    <span class="text-danger">{{ c.scoreSentiment }}</span>
+                  </ng-template>
+                  <ng-template #positive>
+                    <span class="text-success">{{ c.scoreSentiment }}</span>
+                  </ng-template>
+                  
+              
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

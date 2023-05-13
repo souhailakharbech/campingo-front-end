@@ -1,0 +1,87 @@
+.form-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .btn-primary {
+    background-color: #33691E;
+    border-color: #33691E;
+  }
+  
+  .btn-primary:hover {
+    background-color: #33691E;
+    border-color: #33691E;
+  }
+  button.btn.btn-primary {
+    background-color: #33691E;
+    border-color: #33691E;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-top: 
+    20px;
+  }
+  button.btn.btn-primar:hover {
+    background-color: #33691E;
+    border-color: #33691E;
+
+
+  }
+  
+  button.btn.btn-primary:hover {
+    background-color: #33691E;
+    border-color: #33691E;
+  }
+  button {
+    background-color: #33691E;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .btnsubadd
+
+  {
+    background-color: #33691E;
+
+  }
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,72 @@
+ <!------------<section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark" style="min-height: 100vh; background-size: cover; background-image: url('assets/Front Template/img/hero/campingo.jpg');">
+     Search Box 
+  <div class="row">
+    <div class="col-xl-12">
+       form 
+  <div class="row">
+    <div class="col-xl-4 col-lg-4 col-md-6">
+      <div class="single-place mb-30">
+          <div class="place-img"> 
+              <img src="assets/Front Template/img/service/services6.jpg" alt="">
+          </div>
+          <div class="place-cap">
+              <div class="place-cap-top" *ngFor="let item of listActivities ">
+                  <span><i class="fas fa-star"></i><span>{{item.rate}}</span> </span>
+                  <h3><a href="#">{{item.name}}</a></h3>
+                  <p class="dolor">{{item.description}}p>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>(click)=
+</div>
+</div>
+</section>   -->
+<!-------------Test affichage cards--------------------->
+<div >
+<button class="button" (click)="onSuggestActivity"routerLink="/activity/suggest/:id">
+  <i class="fas fa-lightbulb"></i> Suggérer une activité
+</button> 
+</div>
+<div class="row">
+    <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let item of listActivities">
+      <div class="single-place mb-30">
+        <div class="place-img"> 
+            <img src="assets/Front Template/img/service/services6.jpg" alt="" height="300">
+        </div>
+        <div class="place-cap">
+          <div class="place-cap-top">
+            <span><i class="fas fa-star"></i><span>{{item.rate}}</span> </span>
+            <h3><a href="#">{{item.name}}</a></h3>
+            <p class="dolor">{{item.description}} </p> 
+          </div>
+          <div class="rate">
+            <label for="rate">Donner une note :</label>
+            <input type="number" name="rate" [(ngModel)]="selectedRate">
+            <button class="btn btn-primary" (click)="rateActivity(item.idActivity, idutilisateur, selectedRate)">Noter</button>
+          </div>
+          
+         
+          
+          <button class="btn btn-outline-danger" [ngClass]="{'active': isAddedToFavorites, 'added-to-favorites': isAddedToFavorites}" (click)="onAddActivityToFavorites(item.idActivity,idutilisateur)">
+            <i [ngClass]="isAddedToFavorites ? 'fas fa-heart' : 'far fa-heart'"></i> Ajouter aux favoris
+         </button>
+
+          <!-- <button class="delete-btn" (click)="onDeleteActivity(item.idActivity)"><i class="far fa-trash-alt"></i></button>    -->
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+<!--------Fin test affichage cards
+  
+  <div>
+            <button class="far fa-trash-alt" (click)="onDeleteActivity(item.idActivity)"></button>
+            
+
+          </div>
+  
+  
+  ------>

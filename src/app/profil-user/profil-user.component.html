@@ -1,0 +1,55 @@
+<div class="row m-3">
+  <div class="card col-md-4 text-center mr-3">
+    <div class="col">
+    
+      <div class="mb-3">
+        <h2> {{user.familyName}} {{user.nameUser}}</h2>
+        <small class="form-text text-muted">{{user.userType}}</small>
+      </div>
+      <div class="col mb-3 p-0">
+        <button  type="button" class="btn btn-primary mr-3" routerLink="/home/addCampsite"><i class="fas fa-pencil-alt"></i>&nbsp;
+          add campsite</button>
+          <button class="btn btn-danger" (click)="deleteUser(user)" >Delete My account</button>
+          <button [routerLink]="['/edit']" class="btn btn-danger" >update</button>
+         
+           
+          
+      </div>
+    </div>
+  </div>
+  <div class="card col-md-7">
+    <table class="table">
+      <tbody>
+      <tr>
+        <th scope="row"> Name</th>
+        <td>{{user.familyName}}  {{user.nameUser}}</td>
+      </tr>
+     
+      <tr>
+        <th scope="row">Date of birth</th>
+        <td>{{user.birthday | date}}</td>
+      </tr>
+     
+      
+       
+        <tr>
+        <th scope="row">Phone Number</th>
+        <td>{{user.phoneNumber}}</td>
+      </tr>
+      
+        <tr>
+          <th scope="row">Loyalty Points</th>
+          <td>{{user.loyaltyPoints}}</td>
+        </tr>
+        <tr>
+          <th scope="row">adress</th>
+          <td>{{user.adress}}</td>
+        </tr>
+       
+        
+      </tbody>
+    </table>
+  </div>
+
+</div>
+

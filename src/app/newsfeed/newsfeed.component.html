@@ -1,0 +1,110 @@
+<div style="display: flex;flex-wrap: wrap;flex-direction: row; background-color: #fff;  padding-left: 70px; width: 90%; margin-left: 0px;">
+
+<div style="width: 39%; height: 9000px; background-color:#F1FFD3;border-top-left-radius: 15px; z-index: 1; ">
+  <section class="h-100 gradient-custom-2" style="margin-top: -4050px; width: 600px; margin-left: -39px;height: 700px;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-7">
+        <div class="card">
+          <div class="rounded-top text-white d-flex flex-row" style="background-color: #582900; height:190px; ">
+            <div class="ms-4 mt-5 d-flex flex-column" style="width: 130px;">
+              <img src="assets\pictures\téléchargement.png"
+                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                style="width: 150px; z-index: 1">
+              
+             
+            </div>
+           
+            <div class="ms-3" style="margin-top: 130px;">
+              <h5>Andy Horwitz</h5>
+              <p>New York</p>
+            </div>
+          </div>
+          
+          <div class="p-4 text-black" style=" width: 400px; display: flex;flex-direction: row;align-content: space-between;">
+            <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
+            style="z-index: 1; height: 30px; width: 120px; margin-bottom: 10px; " (click)="gotomyposts()">
+            my posts
+          </button>
+
+            <div class="d-flex justify-content-end text-center py-1" style="margin-left: 60px;">
+              <div>
+                <p class="mb-1 h6">253</p>
+                <p class="small text-muted mb-0">Photos</p>
+              </div>
+              <div class="px-3">
+                <p class="mb-1 h6">1026</p>
+                <p class="small text-muted mb-0">posts</p>
+              </div>
+            
+            </div>
+          </div>
+          <div class="card-body p-4 text-black">
+            <div class="mb-5">
+              <p class="lead fw-normal mb-1">About</p>
+              <div class="p-4" style="background-color: #f8f9fa;">
+                <p class="font-italic mb-1">user description</p>
+                <p class="font-italic mb-1">Lives in ...</p>
+                <p class="font-italic mb-0">user info..</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <p class="lead fw-normal mb-0">Recent photos</p>
+              <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p>
+            </div>
+            <div class="row g-2">
+              <div class="col mb-2">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
+                  alt="image 1" class="w-100 rounded-3">
+              </div>
+              <div class="col mb-2">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"
+                  alt="image 1" class="w-100 rounded-3">
+              </div>
+            </div>
+            <div class="row g-2">
+              <div class="col">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
+                  alt="image 1" class="w-100 rounded-3">
+              </div>
+              <div class="col">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
+                  alt="image 1" class="w-100 rounded-3">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+
+<div style="background-color: #F1FFD3; width: 60%; display: flex;flex-direction: column;border-top-right-radius: 15px; ">
+<div style=" display: flex; flex-direction: row;;width: 45rem ; margin-top: 10px; ">
+  <input type="text" class="form-control" id="floatingInput" placeholder="                                 search for post by key word !" style="height: 30px;width:  35rem; word-wrap: break-word;border-radius:20px "[(ngModel)]="searchQuery">
+  <i class="fa-solid fa-magnifying-glass fa-xl" style="margin-left: -31px;margin-top: 15px;" (click)="onSearch()"></i>
+</div>
+  <!--*********************************    add the post              ****************************************** -->
+    <div class="input-group mb-3" style=" margin-top: 20px;"  >
+        <div class="card" style="width: 35rem;height: inherit;border-radius:20px ;height: 200px;">
+            <div class="card-body">
+
+              <input type="text" class="form-control" id="floatingInput" [(ngModel)]="postDescription" placeholder="whrite your post discription here ..." style="height: 100px;width:  33rem; word-wrap: break-word;border-radius:20px">
+              <a href="#" class="btn btn-primary" style="margin-left: 430px;margin-top: 20px;"(click)="onSubmit($event)"><i class="fa-regular fa-share-from-square fa-2xl" (click)="onSubmit($event)"></i>  </a>
+              <label  class="btn btn-primary" for="inputGroupFile01" style=" width: 60px;margin-top: -55px;margin-left: 30px;"><i class="fa-regular fa-image fa-xl"></i></label>
+              <input type="file" class="form-control" id="inputGroupFile01"  (change)="handleFileInput($event) "style="visibility: hidden; width: 1px;"  >
+              
+            </div>
+          </div>
+       
+      </div>
+        <!--*********************************    lis of postes              ****************************************** -->
+
+
+
+      <app-posts [listpostsbyname] ="listpostsbyname"></app-posts>
+
+</div></div>
+<router-outlet></router-outlet>

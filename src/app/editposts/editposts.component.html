@@ -1,0 +1,6 @@
+<p>editposts works!</p>
+<input type="text" class="form-control" id="floatingInput"[(ngModel)]="postDescription "  placeholder= {{post.content}} style="height: 100px;width:  33rem; word-wrap: break-word;border-radius:20px">
+<a href="#" class="btn btn-primary" style="margin-left: 430px;margin-top: 20px;"(click)="onSubmitupdate($event)" ><i class="fa-regular fa-share-from-square fa-2xl"(click)="onSubmitupdate($event)" ></i>  </a>
+<label  class="btn btn-primary" for="inputGroupFile01" style=" width: 60px;margin-top: -55px;margin-left: 30px;"  ><i class="fa-regular fa-image fa-xl"></i></label>
+<input type="file" class="form-control"  (change)="handleFileInput($event)" id="inputGroupFile01" style="visibility: hidden; width: 1px;"  >
+<router-outlet></router-outlet>

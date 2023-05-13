@@ -1,0 +1,65 @@
+
+<div class=" container mt-5">
+
+    <div class=" card p-2">
+        <div class="row">
+            <div class="col-6">
+
+        <form #productForm="ngForm" (ngSubmit)="addProduct(productForm)">
+
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Product Name" [(ngModel)]="product.type" name="type">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Product Brand</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Product Brand" [(ngModel)]="product.brand" name="brand">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Category</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Category" [(ngModel)]="product.category" name="category">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Description" [(ngModel)]="product.description" name="description">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Price</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Price" [(ngModel)]="product.priceperUnit" name="priceperUnit">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Promotion</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Promotion" [(ngModel)]="product.promotion" name="promotion">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Quantity</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Quantity" [(ngModel)]="product.quantity" name="quantity">
+              </div>
+            <div align="end">
+                <button type="submit" *ngIf="isNewProduct" mat-stroked-button
+                 color="primary"  > Add Product</button>
+                <button type="submit" *ngIf="!isNewProduct" mat-stroked-button
+                 color="primary"  > Update Product</button>
+
+            </div>
+           
+          </form>
+        </div>
+
+        
+        <div class="col-6">
+            <input type="file" multiple value="select" #selectFile (change)="onFileSelected($event)">
+           <div class="mt-2">
+            <div *ngFor="let url of product.toolsImages">
+              <img [src]="url.url" width="400px" height="400px" style="border: 1px solid lightgrey ; cursor: pointer;">
+          </div>
+           </div>
+       
+        </div>
+        
+                            
+                            
+      
+        </div>      
+    </div>
+</div>

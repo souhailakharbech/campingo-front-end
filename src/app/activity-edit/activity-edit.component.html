@@ -1,0 +1,37 @@
+<button (click)="goBack()">Retour</button>
+
+ <form class="form-container"#userForm="ngForm" (ngSubmit)="updateactivity(activity)">
+  
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control" id="description" [(ngModel)]="description" name="description" required></textarea>
+  </div>
+  <button  type="submit" class="btsubedit">Submit</button>  
+  
+</form>
+  <!-- <div class="form-group">
+    <label for="activity-type">Activity Type</label>
+    <select class="form-control" id="activity-type" [(ngModel)]="activityTypes" name="activityTypes" required>
+      <option value="">-- Select Type --</option>
+      <option value="Nautique">Nautique</option>
+      <option value="LUDIQUE">LUDIQUE</option>
+      <option value="INTELLECTUELLES">INTELLECTUELLES</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="activity-season">Activity Season</label>
+    <select class="form-control" id="activity-season" [(ngModel)]="seasons" name="seasons" required>
+      <option value="">-- Select Season --</option>
+      <option value="HIVER">HIVER</option>
+      <option value="AUTOMNE">AUTOMNE</option>
+      <option value="ETE">ETE</option>
+      <option value="PRINTEMPS">PRINTEMPS</option>
+      <option value="TOUTELANNEE">TOUTELANNEE</option>
+    </select> -->
+  <!-- </div> -->
+
+  

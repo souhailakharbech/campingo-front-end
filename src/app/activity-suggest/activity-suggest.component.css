@@ -1,0 +1,44 @@
+button {
+    background-color: #33691E;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .suggested-activity-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    max-width: 800px; /* définit une largeur maximale */
+  margin: 0 auto; /* centre l'élément horizontalement */
+  padding: 20px; /* ajoute un peu d'espace entre l'élément et le bord du cadre */
+  border: 6px solid #33691E; /* ajoute une bordure au cadre */
+  
+  }
+  
+  .place-img {
+    margin-bottom: 20px;
+  }
+  
+  .suggested-activity-info {
+    text-align: center;
+  }
+  .suggested-activity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 6px solid #33691E;
+    padding: 20px;
+    margin: 20px;
+  }
+  

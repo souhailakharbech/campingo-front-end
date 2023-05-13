@@ -1,0 +1,169 @@
+<!-- HTML code for the e-commerce product table view -->
+<div class="container">
+  <div class="row">
+    <div class="col-20">
+      <form #f="ngForm" autocomplete="off" >
+        <input  type="text" name="keyword" ngModel placeholder="search university" style="border: 2px solid rgb(10, 9, 9); font-size: 20px; margin-left: 20px; " >
+        <button type="submit" class="btn btn-info" (click)="test(f.value)" style="font-size: 20px;"  >Search</button>
+        <button class="btn "[routerLink]="['/all-products']" >{{retour}} </button>
+      </form>
+      <!-- <form #f="ngForm" autocomplete="off" (ngSubmit)="test(f.value)">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Search any product</mat-label>
+          <input matInput
+         
+                  name="keyword"
+                  id="searchKey"
+                  ngModel
+                  placeholder="Search any product">
+          <mat-hint>Search any product</mat-hint>
+      </mat-form-field>
+      <button type="submit" class="btn btn-info" >Search</button>
+      <button class="btn btn-info" [routerLink]="['/all-products']">Return</button>
+      </form> -->
+     
+
+      <!-- <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav> -->
+      <div class="mt-2">
+        <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-primary mt-3"
+        [routerLink]="['/add-products']">Add Product</button>
+      </div>
+      
+
+      <table class="table mt-3">
+        <thead>
+          <tr>
+            <th>##</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Promotion</th>
+            <th>Quantity</th>
+            <th>Action</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of products">
+            <td>{{p.idTools}}</td>
+            <td>{{p.type}}</td>
+            <td>{{p.brand}}</td>
+            <td>{{p.description}}</td>
+            <td>{{p.category}}</td>
+            <td>{{p.priceperUnit}}</td>
+            <td>{{p.promotion}}</td>
+            <td>{{p.quantity}}</td>
+
+            <td>
+             <button mat-icon-button color="primary" (click)="showImages(p)">
+              <mat-icon> images </mat-icon>
+            </button>
+
+            
+              <!-- <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-primary" [routerLink]="['/edit-products',p.idTools]">edit</button> -->
+              <button mat-icon-button color="primary" [routerLink]="['/updateProduct', p.idTools]">
+            <mat-icon> edit </mat-icon>
+          </button>
+              <!-- <button (click)="getById(prod)" class="btn-primary">edit</button> -->
+            
+            
+              <button mat-icon-button color="warn" (click)="deleteProd(p.idTools)">
+                <mat-icon> delete </mat-icon>
+              </button>
+            </td>
+              
+              <!-- <button class="btn btn-outline-danger btn-sm">
+            <i class="bi bi-trash"></i> Delete
+          </button> -->
+              <!-- <button (click)="deleteProd(p.idTools)" class="btn btn-danger">Delete</button> -->
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- //////////////////////////////// -->
+    <!-- <div class="col-4" *ngIf="product">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Edit Proposal</h2>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <form (ngSubmit)="updateProduct(product)">
+              <div class="form-group">
+                <label for="brand">Brand:</label>
+                <input type="text" class="form-control" id="brand" [(ngModel)]="product.brand" name="brand" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="category">Category:</label>
+                <input type="text" class="form-control" id="category" [(ngModel)]="product.category" name="category" required>
+              </div>
+              <button type="submit" class="btn btn-success">Update Product</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+    </div> -->
+  </div>
+    
+</div>
+
+    <!-- ///////////////////////////// -->
+   
+
+
+
+<!-- Modal for adding a product -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Product</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-add-product></app-add-product>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CSS styles inline within the HTML code -->
+<style>
+  /* Apply styles to the product table */
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+  }
+
+  /* Apply styles to the table header */
+  th {
+    font-weight: bold;
+  }
+
+  /* Apply styles to the table body */
+  td {
+    vertical-align: middle;
+  }
+
+  /* Apply styles to the "Add" button in the table */
+  .btn-primary {
+    margin-right: 0.5rem;
+  }
+</style>
+
+    

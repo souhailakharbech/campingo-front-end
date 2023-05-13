@@ -1,0 +1,37 @@
+<div class="add-activity-button" (click)="onAddActivity()">
+<button mat-icon-button routerLink="/activity/add">
+  <mat-icon>add</mat-icon>
+</button>
+<span class="add-activity-text">Add new activity</span>
+</div>
+<!-- <div *ngIf="showActivityAddComponent">
+  <app-activity-add></app-activity-add>
+</div> -->
+<div class="row">
+    <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let item of listActivitiesbycamp">
+      <div class="single-place mb-30">
+        <div class="place-img"> 
+            <img src="assets/Front Template/img/service/services6.jpg" alt="">
+        </div>
+        <div class="place-cap">
+          <div class="place-cap-top">
+            <span><i class="fas fa-star"></i><span>{{item.rate}}</span> </span>
+            <h3><a href="#">{{item.name}}</a></h3>
+            <p class="dolor">{{item.description}} </p>
+            
+          </div>
+          <div class="btn-container">
+          <button class="delete-btn" (click)="onDeleteActivity(item.idActivity)"><i class="far fa-trash-alt"></i></button>   
+          <div>
+            <button  class="btn-edit mat-icon-button"[routerLink]="['/activity/edit',item.idActivity]">
+              <mat-icon>edit</mat-icon>
+            </button>
+        </div>
+      </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

@@ -1,0 +1,54 @@
+
+<div class="container mt-2">
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card image-container p-3">
+                <img [src]="product.toolsImages[selectedProductIndex].url" class="product-zoom-image">
+
+            </div>
+            <div class="mt-2">
+                <mat-grid-list cols="2" gutterSize="10" rowHeight="1:1">
+                    <mat-grid-tile *ngFor="let file of product.toolsImages; let i = index;" (click)="changeIndex(i)" style="border: 1px solid lightgrey ; cursor: pointer;">
+                            <img [src]="file.url" height="100px">
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </div>
+            
+        </div>
+        <div class="col-6">
+            <div class="product-information">
+                <div class="mt-3">
+                    Brand: <br>
+                   <h2>{{product.brand}}</h2> 
+                </div>
+                    Name: <br>
+                <div class="mt-3">
+                    <h2>{{product.type}}</h2> 
+                 </div>
+                <div class="mt-3">
+                    Description: <br>
+                    {{product.description}}
+                </div>
+                <div class="mt-3">
+                    Quantity: <br>
+                    <h2>{{product.quantity}}</h2> 
+                 </div>
+                <div class="mt-3">
+                    Solde: <br>
+                    <b>Rs. {{product.promotion}} </b> &nbsp;&nbsp; &nbsp;<b style="text-decoration: line-through;"> {{product.priceperUnit}} </b>
+                </div>
+                <div class="mt-4 text-center" >
+                    <button mat-raised-button color="warn" style="width: 200px;">Buy Now</button>
+                    &nbsp;  &nbsp; &nbsp;
+                    <button mat-raised-button color="primary" style="width: 200px;" (click)="addToCart(product.idTools)">Add To Cart</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

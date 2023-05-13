@@ -1,0 +1,73 @@
+
+<section class="pt-5 pb-5 mt-0 aign-items-center d-flex bg-dark" style="min-height: 100vh; background-size: cover; background-image: url('assets/Front Template/img/hero/campingo.jpg');">
+  <div class="container">
+    <div class="header">
+      <h1>Create Account </h1>
+    </div>
+    <div class="main">
+      <form>
+        <span>
+          <i class="fa fa-user"></i>
+          <input type="text" placeholder="Username" name="" [(ngModel)]="user.nameUser" [ngModelOptions]="{standalone: true}">
+          
+        </span><br>
+        <span>
+          <i class="fa fa-user"></i>
+          <input type="text" placeholder="FamilyName" name="" [(ngModel)]="user.familyName" [ngModelOptions]="{standalone: true}">
+          
+        </span><br>
+        <span>
+          <i class="fa fa-birthday-cake"></i>
+          <input type="date" placeholder="Date of birth" name="" [(ngModel)]="user.birthday" [ngModelOptions]="{standalone: true}">
+          
+        </span><br>
+        <span>
+          <i class="fa fa-map-marker"></i>
+          <input type="text" placeholder="Adress" name="" [(ngModel)]="user.adress" [ngModelOptions]="{standalone: true}">
+          
+        </span><br>
+        <span>
+          <i class="fa fa-envelope"></i>
+          <input type="text" placeholder="Email" name=""[(ngModel)]="user.email" [ngModelOptions]="{standalone: true}">
+          
+        </span><br>
+        <span>
+          <i class="fa fa-lock"></i>
+          <input type="password" placeholder="password" name="" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+
+          
+        </span><br>
+        <span>
+          <i class="fa fa-phone"></i>
+          <input type="text" placeholder="Phone number" name=""[(ngModel)]="user.phoneNumber" [ngModelOptions]="{standalone: true}">
+          
+        </span><br>
+        <span>
+        <div class="single-element-widget mt-20 d-flex align-items-center">
+          <p class="mb-25 mr-20" class="white-text">Are You ? </p>
+          <div class="default-select" id="default-select">
+                <select [(ngModel)]="user.userType" [ngModelOptions]="{standalone: true}">
+                  
+                  <option value=" {{owner}}">OWNER</option>
+            <option value="{{client}}">CLIENT</option>
+            <option value="{{admin}}">ADMIN</option>
+            </select>
+          </div>
+        </div>
+        </span><br>
+     
+
+          <button (click)="registerNow()" >Register</button>
+          <p class="white-text">Have an account ? <button type="button" routerLink="/home/login" >login</button> </p>
+         
+      </form>
+    </div>
+  </div>
+ </section>
+ 
+
+
+              
+           
+
+

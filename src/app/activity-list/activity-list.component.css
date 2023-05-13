@@ -1,0 +1,77 @@
+table {
+    width: 900px;
+    
+  }
+  title{
+    color: black;
+  }
+
+  .single-place  {
+    display: inline-block; /* permet d'afficher les cards en ligne */
+    margin-right: 10px; /* ajoute de l'espace entre les cards */
+    width: calc(33.33% - 10px); /* définit la largeur des cards */
+    vertical-align: top; /* aligne les cards en haut */
+  }
+  .delete-btn {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .delete-btn:hover {
+    color: #008BB5;
+  }
+  .btn-outline-danger.active {
+    background-color: #ff007f;
+    color: #ffffff;
+    border-color: #ff007f;
+  }
+  .btn-favorite {
+    background-color: #ffffff;
+    border-color: #f0f;
+  }
+  
+  .btn-favorite.active {
+    background-color: #f0f;
+    border-color: #f0f;
+    color: #fff;
+  }
+  .added-to-favorites {
+    background-color: red !important;
+    color: white !important;
+    border-color: red !important;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    color: #33691E;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 20px auto;
+    position: relative;
+  bottom: 0;
+  transition: bottom 0.3s ease-out;
+    
+
+  }
+     .button:hover {
+      background-color: #5BB7F4;
+      color: #ffffff;
+      bottom: 10px;
+    } 
+  
+  
+  
+  
+  
+
+  
+  
+  
+  

@@ -1,0 +1,89 @@
+
+<div *ngFor="let data of(listpostsbyname ? listpostsbyname : listposts)" style="display: flex;margin-bottom: 40px ;  background-color:#F1FFD3;">
+ 
+  
+  <div
+    class="card"
+    style="width: 35rem; "
+    *ngIf="data && data.pictures"
+  >  <div style="margin-bottom: 0px; display: flex; margin-top: 20px; flex-direction: row;flex-wrap: wrap; margin-left: 20px;"> <img
+    [src]="'/assets/pictures/' +data?.pictures?.url?.split('\\')?.pop()?.split('/')?.pop()"
+    class="card-img-top"
+    alt=""
+    style="width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover; margin-bottom: 10px;"
+  />  <h1 style="padding-left: 10px ;margin-top: 15px;">{{data?.user?.nameUser}}</h1>  <i class="fa-solid fa-bookmark fa-2xl" style="margin-left: 290px;margin-top: 30px;"></i> </div>
+    <img
+      [src]="'/assets/pictures/' +data?.pictures?.url?.split('\\')?.pop()?.split('/')?.pop()"
+      class="card-img-top"
+      alt=""
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ data.location}}</h5>
+      <p class="card-text">
+        {{data.content}}
+      </p>
+      <div style="display: flex; margin-top: 40px;margin-bottom: 20px; ">
+
+        <i class="fa-regular fa-heart fa-2xl icons"  style="margin-left: 10px;"(click)="onLikeButtonClicked(data.idpublication,'love' )" ></i>
+        <i class="fa-regular fa-thumbs-down fa-2xl icons" style="margin-left: 10px;" (click)="onLikeButtonClicked(data.idpublication,'dislike' )"></i>
+        <i class="fa-regular fa-thumbs-up fa-2xl icons"  style="margin-left: 10px;" (click)="onLikeButtonClicked(data.idpublication,'like' )"></i>
+
+
+
+      </div>
+     
+      
+    </div>
+ <!-- Button trigger modal comments-->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      see and add comments
+    </button>
+  </div>
+
+
+  <!-- Modal 1 comments-->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    style="margin-left: -550px; width: 2000px; border-radius: 30px;"
+  >
+    <div class="modal-dialog" style="width: 1000px;">
+      <div class="modal-content" style="width: 1000px;">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">post comments</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          list of comments
+        </div>
+        <div class="modal-footer">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            placeholder="whrite your post comments here ..."
+            style="height: 40px; width: 700px; word-wrap: break-word;"
+          />
+          <button type="button" class="btn btn-primary">add comments</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

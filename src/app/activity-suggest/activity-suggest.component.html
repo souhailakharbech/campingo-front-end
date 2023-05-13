@@ -1,0 +1,11 @@
+<button (click)="goBack()">Retour</button>
+<div class="suggested-activity-container">
+    <div class="place-img"> 
+      <img src="assets/Front Template/img/service/services6.jpg" alt="" height="300">
+    </div>
+    <div *ngIf="suggestedActivity">
+      <h2>Activité suggérée :</h2>
+      <p>{{ suggestedActivity.name }}</p>
+      <p>{{ suggestedActivity.description }}</p>
+    </div>
+  </div>

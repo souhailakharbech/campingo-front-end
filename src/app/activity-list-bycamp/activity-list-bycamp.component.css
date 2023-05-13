@@ -1,0 +1,70 @@
+.delete-btn {
+    background: none;
+    border: none;
+    color: #007BA3;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .delete-btn:hover {
+    color: #3E8E41;
+  } 
+
+  button.mat-icon-button {
+    background-color: #68BEF5; /* couleur de fond */
+    color: #fff; /* couleur de texte */
+    border-radius: 50%; /* forme du bouton */
+    width: 40px; /* largeur */
+    height: 40px; /* hauteur */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); /* ombre */
+    margin-bottom: 10px;
+  }
+  
+  button.mat-icon-button:hover {
+    background-color: #3E8E41; /* couleur de fond au survol */
+  }
+  
+  mat-icon {
+    font-size: 24px; /* taille de l'icône */
+  }
+  .add-activity-button {
+    display: flex; /* affiche les éléments en tant que conteneur flexible */
+    align-items: center; /* aligne les éléments verticalement */
+  }
+  
+  .add-activity-text {
+    margin-left: 8px; /* ajoute une marge à gauche pour séparer le texte de l'icône */
+    font-size: 14px; /* définit la taille de la police */
+    font-weight: bold; /* définit l'épaisseur de la police */
+  }
+  
+
+
+  .btn-edit {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+    
+  }
+  .btn-edit:focus {
+    outline: none;
+  }
+  
+  .btn-edit fa-icon,
+  .btn-edit mat-icon {
+    color: #007BA3;
+    font-size: 1.2rem;
+    font-size: 28px; /* ajustez la taille de la police */
+    width: 32px; /* ajustez la largeur  */
+    height: 32px; /* ajustez la hauteur  */
+    margin: 0;
+  }
+  .btn-container {
+    display: flex;
+    align-items: baseline;
+  }
+   
